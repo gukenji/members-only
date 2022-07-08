@@ -1,12 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1 id="main-title">Segredos contados:</h1>
 
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= link_to "Show this post", post %>
+      <%= link_to "Show this post", post, class: "show-post" %>
     </p>
   <% end %>
 </div>

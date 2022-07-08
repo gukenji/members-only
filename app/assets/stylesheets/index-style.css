@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 
+    "nav nav nav"
+    "sd main main"
+    "sd main main"
+    "sd main main"
+    "ft   ft   ft";
+    background: #767774;
+
+}
+
+.navbar {
+    grid-area: nav;
+    display: flex;
+    padding: 2% 50px;
+    border-bottom: 1px solid black;
+}
+
+.navbar-item {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar__right {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 20px;
+}
+
+.main {
+    grid-area: main;
+    padding-top: 2%;
+    background-color: white;
+}
+
+.side {
+    grid-area: sd;
+    font-size: 10px;
+    padding: 2% 50px;
+}
+
+#posts {
+    color: black;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+}
+#posts > div,
+#posts > p {
+    padding: 20px 0;
+}
+
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+z
+.body {
+    font-size: 14px;
+}
+
+#main-title {
+    padding: 0 20px;
+}
