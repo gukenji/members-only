@@ -26,19 +26,30 @@
         <% end %>
       </div>
       <div class="navbar__right">
-        <p>botao nick/login</p>
-        <p>botao deslogar/criar conta</p>
+        <% if user_signed_in? %>
+          <p class="user-info">
+            <%= link_to current_user.username, edit_user_registration_path, class: "user-info" %>
+          </p>
+          <p>
+            <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete },  class: "user-info" %>
+          </p>
+        <% else %>
+          <p>
+            <%= link_to 'Entrar', new_user_session_path, class: "user-info" %>
+          </p>
+          <p>
+            <%= link_to 'Criar conta', new_user_registration_path, class: "user-info" %>
+          </p>
+        <%end%>
       </div>
     </nav>
     <div class="side">
-        <h1>Side</h1>
+      <% if user_signed_in? && !current_page?(edit_user_registration_path) %>
+      <%= render "posts/form" %>
+      <% end %>
     </div>
     <div class="main">
-        <%= yield %>
+      <%= yield %>
     </div>
-    <footer class="footer">
-    </footer>
-
-
   </body>
 </html>

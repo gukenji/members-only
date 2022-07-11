@@ -1,14 +1,7 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" class="notice-info"><%= notice %></p>
 
-<h1 id="main-title">Segredos contados:</h1>
+<h1 id="main-title">FEED</h1>
 
 <div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post, class: "show-post" %>
-    </p>
-  <% end %>
+  <%= render "feed" %>
 </div>
-
-<%= link_to "New post", new_post_path %>
