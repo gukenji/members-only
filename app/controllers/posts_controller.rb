@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -67,5 +68,11 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:body)
+    end
+
+    def correct_user
+      unless @post.user_id == current_user.id
+        redirect_to root_path, alert: "Erro! Você está tentando entrar num post criado por outra pessoa!"
+      end
     end
 end

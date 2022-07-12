@@ -1,16 +1,15 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-
-body {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(9,1fr);
-    grid-template-areas: 
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-template-areas:
     "nav nav nav"
     "sd main main"
     "sd main main"
@@ -20,178 +19,224 @@ body {
     "sd main main"
     "sd main main"
     "sd main main";
-    background: black;
-    height: max(100vh,100%);
+  background: black;
+  height: max(100vh, 100%);
 }
 
 #main-title {
-    letter-spacing: 2.5px;
-    text-align: center;
-
+  letter-spacing: 2.5px;
+  text-align: center;
 }
 h2 {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .navbar {
-    grid-area: nav;
-    display: flex;
-    padding: 2% 50px;
-    border-bottom: 1px solid white;
-    align-items: center;
+  grid-area: nav;
+  display: flex;
+  padding: 2% 50px;
+  border-bottom: 1px solid white;
+  align-items: center;
 }
 
 .navbar-item {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .navbar__right {
-    display: flex;
-    justify-content: flex-end;
-    flex: 1;
-    gap: 20px;
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 20px;
 }
 
 .main {
-    grid-area: main;
-    padding-top: 2%;
-    background-color: white;
-    width: 100%;
-    height: 100%;
+  grid-area: main;
+  padding-top: 2%;
+  background-color: white;
+  width: 100%;
+  height: 100%;
 }
 
 .side {
-    grid-area: sd;
-    font-size: 10px;
-    padding: 2% 50px;
+  grid-area: sd;
+  font-size: 10px;
+  padding: 2% 50px;
 }
 
 #posts {
-    color: black;
-    padding: 20px 20px;
-    margin-bottom: 20px;
+  color: black;
+  padding: 20px 20px;
+  margin-bottom: 20px;
 }
 #posts > div {
-    padding: 20px 0;
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
 }
 
 #posts > p {
-    word-wrap: break-word;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-size: 14px;
-
+  word-wrap: break-word;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
-#posts > p:not(:last-of-type){
-    border-bottom: 1px dashed black;
+#posts > p:not(:last-of-type) {
+  border-bottom: 1px dashed black;
 }
-
 
 .title {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 3px;
 }
 
 .body {
-    font-size: 14px;
+  font-size: 14px;
 }
-
 
 .button {
-    font-family: 'Roboto', sans-serif;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-    text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
 }
 
-.button:hover { 
-    background-color: rgb(70,63,250,.7);
+.button:hover {
+  background-color: rgb(70, 63, 250, 0.7);
 }
 
 .main-account {
-    padding: 0 4%;
-    display: flex;
-    flex-direction: column;
+  padding: 0 4%;
+  display: flex;
+  flex-direction: column;
 }
 
 .field {
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 0px 20px;
-    gap: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+  gap: 10px;
 }
 
 .input {
-    width: 400px;
+  width: 400px;
 }
 
 .hint {
- font-size: 10px;
+  font-size: 10px;
 }
 
 .btn {
-    padding: 10px 10px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    border: 1px solid black;
-    align-self: center;
+  padding: 10px 10px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  border: 1px solid black;
+  align-self: center;
 }
 
 .submit {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .notice-info {
-    text-align: center;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .user-info {
-    color: white;
-    text-decoration: none;
-    justify-self: center;
-    align-self: center;
-    text-decoration: none;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  justify-self: center;
+  align-self: center;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .user-info:hover,
 nav h1:hover {
-    color: red;
+  color: red;
 }
 
 .username {
-color: rgb(70,63,250,.7);
-font-size: 16px;
+  color: rgb(70, 63, 250, 0.7);
+  font-size: 16px;
 }
 
 #post_body {
-    width: 300px;
-    height: 200px;;
+  width: 300px;
+  height: 200px;
 }
 
-#side-h2{
-    font-size: 18px;
-    text-align: center;
-    color: white;
-    letter-spacing: 2.5px;
+#side-h2 {
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  letter-spacing: 2.5px;
+}
 
+.error,
+.error_notification {
+  color: red;
+  font-size: 10px;
+}
+
+.error_notification {
+  padding: 0 20px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.global-notification {
+  font-size: 20px;
+  height: 50px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.success {
+  background-color: green;
+}
+
+.warning {
+  background-color: red;
+}
+
+.level-item {
+  text-decoration: none;
+  color: blue;
+  font-size: 14px;
+  margin-right: 4px;
+}
+.level-item:visited {
+  color: blue;
+}
+
+
+.comment > p {
+    margin-bottom: 5px;
+}
+
+#posts > .username {
+    margin-top: 10px !important;
 }

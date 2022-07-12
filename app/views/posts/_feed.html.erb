@@ -1,15 +1,21 @@
 <% @posts.each do |post| %>
   <% if user_signed_in?%>
     <strong class="username"><%= post.user.username %></strong><br/>
-    <p><%= post.body %></p>
-    <%= link_to edit_post_path(post), class: "level-item" do %>
-      <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-    <% end %>
-    <%= link_to post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "level-item" do %>
-      <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-    <% end %>
+    <div class="comment">
+      <p><%= post.body %></p>
+      <% if current_user.id == post.user_id %>
+        <%= link_to edit_post_path(post), class: "level-item" do %>
+          <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+        <% end %>
+        <%= link_to post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "level-item" do %>
+          <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+        <% end %>
+      <% end %>
+    </div>
   <% else %>
-    <strong class="username">usuário desconhecido</strong>
-    <p><%= post.body %></p>
+    <div>
+      <strong class="username">usuário desconhecido</strong>
+      <p><%= post.body %></p>
+    </div>
   <% end %>
 <% end %>
